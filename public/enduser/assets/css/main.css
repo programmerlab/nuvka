@@ -1312,7 +1312,7 @@ header{background:#fdd922}
 .top-cart-row .top-cart:before{
 content:"\f290";
 font-family:FontAwesome;
-background:#085a9a;
+background:#f16828;
 color:#fff;
 display:inline-block;
 padding:0px;
@@ -1692,7 +1692,7 @@ font-size:18px}
 
 	font-weight:700;
 	letter-spacing: 0.5px;
-	background:#085b9a;
+	background:#f16828;
 
 }
 .sidebar .side-menu .head .icon {
