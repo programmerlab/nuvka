@@ -12,14 +12,7 @@ table {
 </style>
 </head>
 <body>
-<table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-     <!-- <td width="197" align="right" valign="top" style="background-color:#17DA8A"><img src="https://www.wiaipi.com/public/assets/front-end/images/logo.png" width="197" height="61" style="display:block;"></td> -->
-      <td align="center" valign="middle" bgcolor="" style="background-color:#17DA8A ; padding:20px; color:#332C41;font-size:28px; ">
-      <div style="font-size:24px;">UDEX</div>
-    </td>
-  </tr>
-</table>
+ 
   <table width="600" border="1" align="center" cellpadding="0" cellspacing="1" bgcolor="#971800" style="background-color:#fff;">
       <tr>
           <td align="center" valign="top" bgcolor="#ffffff" >
@@ -31,7 +24,7 @@ table {
                       <p> {{ ucwords($content['interview_created_by'])}} has added you to a Udex evaluation. You'll
 be evaluating  {{ $content['condidate_name']}}.</p>
                       <p>Enjoy! <p> 
-                      <p>Team Udex</p>
+                      <p>Team</p>
                   </div>
                 </td>
               </tr>

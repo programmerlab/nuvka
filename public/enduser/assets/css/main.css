@@ -143,7 +143,7 @@ img[src="assets/images/blank.gif"] {
   -ms-transition: all linear 0.2s;
   -o-transition: all linear 0.2s;
   transition: all linear 0.2s;
-  background: #fdd922;
+  background: #ff7878;
   color: #fff;
   border: none;
   font-size: 13px;
@@ -151,7 +151,8 @@ img[src="assets/images/blank.gif"] {
   border-radius:0;
   padding: 6px 14px;
   font-family: 'Montserrat', sans-serif;
-  border-radius:2px
+  border-radius:2px;
+  font-family:bold;
 
 }
 .btn-black {
@@ -1312,7 +1313,7 @@ header{background:#fdd922}
 .top-cart-row .top-cart:before{
 content:"\f290";
 font-family:FontAwesome;
-background:#f16828;
+background:#ff7878;
 color:#fff;
 display:inline-block;
 padding:0px;
@@ -1692,7 +1693,8 @@ font-size:18px}
 
 	font-weight:700;
 	letter-spacing: 0.5px;
-	background:#f16828;
+	background:#ff7878;
+
 
 }
 .sidebar .side-menu .head .icon {

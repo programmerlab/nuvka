@@ -1,76 +1,166 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<!-- Meta -->
-<meta chaRSet="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="description" content="">
-<meta name="author" content="">
-<meta name="keywords" content="MediaCenter, Template, eCommerce">
-<meta name="robots" content="all">
-<title> 
-    {{ isset($website_title->field_value)?$website_title->field_value:"ShoperSquare: India largest ecommerce company" }} 
-</title>
+	
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{ $meta_title or url('/') }}</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="Keywords" content="{{$meta_key or url('/') }}">
+        <meta name="Description" content="{{ strip_tags($meta_desc) }}"> 
+        <!-- favicon -->      
+        <link rel="shortcut icon" type="image/png" href="{{url('storage/uploads/img/'.$website_logo->field_value)}}" /> 
+        <!-- all css here -->
 
-<!-- Bootstrap Core CSS -->
-<link rel="stylesheet" href="{{ asset('public/enduser/assets/css/bootstrap.min.css') }}">
+        <!-- bootstrap v3.3.6 css -->
+        <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css')}}">
 
-<!-- Customizable CSS -->
-<link rel="stylesheet" href="{{ asset('public/enduser/assets/css/main.css') }}">
-<link rel="stylesheet" href="{{ asset('public/enduser/assets/css/blue.css') }}">
-<link rel="stylesheet" href="{{ asset('public/enduser/assets/css/owl.carousel.css') }}">
-<link rel="stylesheet" href="{{ asset('public/enduser/assets/css/owl.transitions.css') }}">
-<link rel="stylesheet" href="{{ asset('public/enduser/assets/css/animate.min.css') }}">
-<link rel="stylesheet" href="{{ asset('public/enduser/assets/css/rateit.css') }}">
-<link rel="stylesheet" href="{{ asset('public/enduser/assets/css/bootstrap-select.min.css') }}">
+        
+        <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap-switch.min.css')}}">
+        <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap-datepicker3.min.css')}}">
+        <!-- owl.carousel css -->
+        <link rel="stylesheet" href="{{ URL::asset('assets/css/owl.carousel.css')}}">
+        <link rel="stylesheet" href="{{ URL::asset('assets/css/owl.transitions.css')}}">
+        <!-- meanmenu css -->
+        <link rel="stylesheet" href="{{ URL::asset('assets/css/meanmenu.min.css')}}">
+        <!-- font-awesome css -->
+        <link rel="stylesheet" href="{{ URL::asset('assets/css/font-awesome.min.css')}}">
+        <link rel="stylesheet" href="{{ URL::asset('assets/css/icon.css')}}">
+        <link rel="stylesheet" href="{{ URL::asset('assets/css/flaticon.css')}}">
+        <!-- magnific css -->
+        <link rel="stylesheet" href="{{ URL::asset('assets/css/magnific.min.css')}}">
+        <!-- venobox css -->
+        <link rel="stylesheet" href="{{ URL::asset('assets/css/venobox.css')}}">
+        <!-- style css -->
+        <link rel="stylesheet" href="{{ URL::asset('assets/css/style.css')}}">
+        <!-- responsive css -->
+        <link rel="stylesheet" href="{{ URL::asset('assets/css/responsive.css')}}"> 
+        <!-- modernizr css -->
+        
+        {!! $google_anatycs->field_value or '' !!}
 
-<!-- Icons/Glyphs -->
-<link rel="stylesheet" href="{{ asset('public/enduser/assets/css/font-awesome.css')}}">
+        
+        <script src="{{ URL::asset('assets/js/font-awesome.js')}}"></script> 
+        
+    </head>
+        <body onload="Captcha();">
 
-<!-- Fonts -->
-<!-- <link href='../../../../fonts.googleapis.com/css-family=Roboto-300,400,500,700.htm' rel='stylesheet' type='text/css'>
-<link href='../../../../fonts.googleapis.com/css-family=Open+Sans-400,300,400italic,600,600italic,700,700italic,800.htm' rel='stylesheet' type='text/css'>
-<link href='../../../../fonts.googleapis.com/css-family=Montserrat-400,700.htm' rel='stylesheet' type='text/css'>
- --><style type="text/css">
-	.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
-.se-pre-con {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url({{url('public/assets/img/loading.gif')}}) center no-repeat #fff;
-}
-.loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
 
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.se-pre-con.loader {
-    margin: 0 auto; 
-    left: 44.5%;
-    top: 44.5%;
-}
-
-</style>
-</head>
-<body class="cnt-home">
-<!-- <div class="se-pre-con "></div>  -->
- 
+        <div class="main-wraper">
+        <header class="header-one">
+            <!-- Start top bar -->
+            <div class="topbar-area fix hidden-xs">
+                <div class="container">
+                    <div class="row">
+                        <div class=" col-md-12 col-sm-12">
+                            <div class="topbar-left">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-envelope"></i>  
+                                        {{$website_email->field_value or ' sales@globalmarketplayers.com' }}</a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-phone"></i> {{$phone->field_value or '+1-1234567891'}} </a></li>
+                                </ul>  
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <!-- End top bar -->
+            <!-- header-area start -->
+            <div class="header-area hidden-xs">
+                <div class="container">
+                    <div class="row">
+                        <!-- logo start -->
+                        <div class="col-md-3 col-sm-3 logo-bg">
+                            <div class="logo">
+                                <!-- Brand -->
+                                <a class="navbar-brand page-scroll sticky-logo" href="{{url('/')}}">
+                                    <img src="{{ url('img/logo/logo2.png')}}" alt="">                                </a>                            </div>
+                        </div>
+                        <!-- logo end -->
+                        <div class="col-md-9 col-sm-9">
+                            <div class="header-right-link">
+                                <!-- search option start -->
+                                
+                                <!-- search option end -->
+                            </div>
+                            <!-- mainmenu start -->
+                            <nav class="navbar navbar-default">
+                                <div class="collapse navbar-collapse" id="navbar-example">
+                                    <div class="main-menu">
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li><a class="pagess" href="{{url('research-categories')}}">Research Categories</a>
+                                                <ul class="sub-menu" >
+                                                    @foreach($catMenu as $result)
+                                                    <li><a href="{{url($result->url)}}"> {{ucwords($result->category_name)}}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                            <li><a class="pagess" href="{{url('about-us')}}">About us</a>
+                                                <ul class="sub-menu" style="width: 300px">
+                                                    <li style="width: 100%"><a href="{{url('pressRelease')}}">Press Release</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a class="pagess" href="{{url('publisher')}}">Publisher</a>
+                                            </li>
+                                            <li><a class="pagess" href="{{url('services')}}">Services</a>
+                                                
+                                            </li>
+                                            <li><a class="pagess" href="{{url('contact')}}">Contact Us</a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                            <!-- mainmenu end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header-area end -->
+            <!-- mobile-menu-area start -->
+            <div class="mobile-menu-area hidden-lg hidden-md hidden-sm">
+				<img class="mob-logo" src="{{ url('img/logo/logo2.png')}}" alt="" />
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mobile-menu">
+                                <div class="logo">
+                                    <a href="{{url('/')}}"><img src="{{ url('img/logo/logo.png')}}" alt="" /></a>                                </div>
+                                <nav id="dropdown">
+                                    <ul>
+                                        <li>
+                                            <a class="pagess" href="{{url('research-categories')}}">Research Categories</a>
+                                                <ul class="sub-menu">
+                                                    @foreach($catMenu as $result)
+                                                    <li><a href="{{url($result->url)}}">
+                                                        {{ucwords($result->category_name)}}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                            <li><a class="pagess" href="{{url('pressRelease')}}">About us</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="{{url('pressRelease')}}">Press Release</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a class="pagess" href="{{url('publisher')}}">Publisher</a>
+                                            </li>
+                                            <li><a class="pagess" href="{{url('services')}}">Services</a>
+                                                
+                                            </li>
+                                            <li><a class="pagess" href="{{url('contact')}}">Contact Us</a>
+                                            </li>
+                                    </ul>
+                                </nav>
+                            </div>                  
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile-menu-area end -->       
+        </header>

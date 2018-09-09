@@ -1,8 +1,10 @@
 /node_modules
 /public/storage
 /vendor
+/nbproject
 /.idea
 Homestead.json
 Homestead.yaml
 .env
-.htaccess
+.bash_history
+/nbproject/private/

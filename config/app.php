@@ -41,7 +41,7 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'record_per_page' => 20,
+    'record_per_page' => 15,
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' =>   'Asia/Kolkata',
 
     /*
     |--------------------------------------------------------------------------
@@ -163,15 +163,19 @@ return [
        /*
         * Additional Service provider
         */
-       Modules\Admin\AdminServiceProvider::class , 
+        Modules\Admin\AdminServiceProvider::class , 
+       Modules\Website\WebsiteServiceProvider::class , 
+       // Orangehill\Iseed\IseedServiceProvider::class,
        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
        Barryvdh\DomPDF\ServiceProvider::class,
        Way\Generators\GeneratorsServiceProvider::class,
-       Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class, 
+       Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,  
+       Maatwebsite\Excel\ExcelServiceProvider::class,
+       Zizaco\Entrust\EntrustServiceProvider::class,
        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
-       Nestable\NestableServiceProvider::class
-
-
+       Nestable\NestableServiceProvider::class,
+      
+       
     ],
 
     /*
@@ -222,10 +226,11 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'Helper'    =>  App\Helpers\Helper::class,
-        'PDF' => Barryvdh\DomPDF\Facade::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class, 
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'Nestable' => Nestable\Facades\NestableService::class
-
     ],
 
 ];

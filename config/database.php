@@ -1,5 +1,20 @@
 <?php
 
+  try{
+        $timezone = 'Asia/Kolkata';
+    }catch(\Exception $e){
+        $timezone = 'Asia/Kolkata';
+    }  
+
+      date_default_timezone_set($timezone);
+      $zones_array = array();        
+      $timestamp = time();         
+      # to maintain the original timezone, store before
+      $zones_array =  date('P', $timestamp);
+      $default_timezone = date_default_timezone_get();
+      # to maintain the original timezone, re-set after
+      date_default_timezone_set($default_timezone); 
+
 return [
 
     /*
@@ -54,7 +69,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'localhost'),
+            'host' => env('DB_HOST', '158.69.223.213'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
@@ -64,6 +79,7 @@ return [
             'prefix' => '',
             'strict' => false,
             'engine' => null,
+            'timezone' => '+10:00'
         ],
 
         'pgsql' => [

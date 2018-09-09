@@ -11,16 +11,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         
         if (Schema::hasTable('admin'))
-        {
-            DB::table('admin')->insert([ 
-                'name'  =>  'Admin',
-                'email' => 'admin@admin.com',
-                'password' => bcrypt('123456')
-            ]);
-        } 
-
+		{
+		    DB::table('admin')->insert([
+	            'name' => 'admin',
+	            'email' => 'admin@admin.com',
+	            'password' => bcrypt('admin'),
+        	]);
+		} 
          
     }
 }
