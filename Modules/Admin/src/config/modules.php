@@ -1,0 +1,8 @@
+<?php
+
+declare(strict_types=1);
+
+
+    return [
+        'message' => 'Welcome to your new package',
+    ];
