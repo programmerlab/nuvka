@@ -93,7 +93,7 @@
                     <table>
                         <tr>
                             <td class="title">
-                                <img src="https://www.lazimbana.com/laravel/public/new/images/logo-lazimbana.png">
+                                <img src="http://nuvka.in/nuvkalogo.png" width="auto">
                             </td>
                              
                              <td align="right">
