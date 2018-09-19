@@ -58,6 +58,7 @@
                                         </div>
                                     </div>
                                      
+                                    <div class="table-scrollable">
                                     <table class="table table-striped table-hover table-bordered" id="">
                                         <thead>
                                             <tr>
@@ -106,6 +107,7 @@
                                         </tbody>
                                     </table>
                                      <div class="center" align="center">  {!! $categories->appends(['search' => isset($_GET['search'])?$_GET['search']:''])->render() !!}</div>
+                                 </div>
                                 </div>
                             </div>
                             <!-- END EXAMPLE TABLE PORTLET-->

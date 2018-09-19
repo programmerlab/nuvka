@@ -59,96 +59,98 @@
 
                             </div>
                         </div>
+                        <div class="table-scrollable">
+                            <table class="table table-striped table-hover table-bordered" id="contact">
+                                <thead>
+                                    <tr>
+                                        <td><div class="mt-checkbox-list">
+                                        <label class="mt-checkbox mt-checkbox-outline">
+                                            <input type="checkbox" onclick="checkAll(this)"> 
+                                            <span></span>
+                                        </label>
+                                        </div></td>
+                                        <th>Sno</th> 
+                                        <th>Title</th>
+                                        <th>Description</th>
+                                        <th>Category</th> 
+                                        <th>Price</th>
+                                        <th>Discount</th>
+                                        
+                                        
+                                        <th>Created Date</th> 
+                                        <th>Action</th>
+                                    </tr>
+                                    @if(count($products)==0)
+                                    <tr>
+                                        <td colspan="8">
+                                            <div class="alert alert-danger alert-dismissable">
+                                                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
+                                                <i class="icon fa fa-check"></i>  
+                                                {{ 'Record not found. !' }}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    @endif
 
-                        <table class="table table-striped table-hover table-bordered" id="contact">
-                            <thead>
-                                <tr>
-                                    <td><div class="mt-checkbox-list">
-                                    <label class="mt-checkbox mt-checkbox-outline">
-                                        <input type="checkbox" onclick="checkAll(this)"> 
-                                        <span></span>
-                                    </label>
-                                    </div></td>
-                                    <th>Sno</th> 
-                                    <th>Title</th>
-                                    <th>Description</th>
-                                    <th>Category</th> 
-                                    <th>Price</th>
-                                    <th>Discount</th>
-                                    
-                                    
-                                    <th>Created Date</th> 
-                                    <th>Action</th>
-                                </tr>
-                                @if(count($products)==0)
-                                <tr>
-                                    <td colspan="8">
-                                        <div class="alert alert-danger alert-dismissable">
-                                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
-                                            <i class="icon fa fa-check"></i>  
-                                            {{ 'Record not found. !' }}
-                                        </div>
-                                    </td>
-                                </tr>
-                                @endif
+                                </thead>
+                                <tbody>
+                                    @foreach ($products  as $key => $result)  
+                                    <tr>
+                                        <td><div class="mt-checkbox-list">
+                                        <label class="mt-checkbox mt-checkbox-outline">
+                                            <input type="checkbox" name="checkAll" id="chk_{{$result->id}}" value="{{$result->id}}">  
+                                            <span></span>
+                                        </label>
+                                        </div></td>
+                                        <td>{{ ++$key }}</td>
+                                        <td>
+                                            <a href="#" target="_blank"> 
+                                                {!! ucfirst($result->product_title)     !!} 
+                                            </a>
+                                        </td> 
+                                        <td>
+                                            {!! substr(strip_tags($result->description),0,50) !!}...<a href="{{ route('product.show',$result->id)}}">
+                                                <i class="glyphicon glyphicon-eye-open" title="view"></i> 
+                                            </a>
+                                        </td> 
+                                        <td>
+                                            {!! isset($result->category->category_name)?ucfirst($result->category->category_name):'NA' !!} 
+                                        </td>
 
-                            </thead>
-                            <tbody>
-                                @foreach ($products  as $key => $result)  
-                                <tr>
-                                    <td><div class="mt-checkbox-list">
-                                    <label class="mt-checkbox mt-checkbox-outline">
-                                        <input type="checkbox" name="checkAll" id="chk_{{$result->id}}" value="{{$result->id}}">  
-                                        <span></span>
-                                    </label>
-                                    </div></td>
-                                    <td>{{ ++$key }}</td>
-                                    <td>
-                                        <a href="#" target="_blank"> 
-                                            {!! ucfirst($result->product_title)     !!} 
-                                        </a>
-                                    </td> 
-                                    <td>
-                                        {!! substr(strip_tags($result->description),0,50) !!}...<a href="{{ route('product.show',$result->id)}}">
-                                            <i class="glyphicon glyphicon-eye-open" title="view"></i> 
-                                        </a>
-                                    </td> 
-                                    <td>
-                                        {!! isset($result->category->category_name)?ucfirst($result->category->category_name):'NA' !!} 
-                                    </td>
+                                        <td>
+                                            {!! ucfirst($result->price)     !!}
+                                        </td>
 
-                                    <td>
-                                        {!! ucfirst($result->price)     !!}
-                                    </td>
+                                        <td>
+                                            {!! ucfirst($result->discount)     !!}
+                                        </td>
+                                        <td>
+                                            {!! Carbon\Carbon::parse($result->created_at)->format('d-m-Y'); !!}
+                                        </td>
 
-                                    <td>
-                                        {!! ucfirst($result->discount)     !!}
-                                    </td>
-                                    <td>
-                                        {!! Carbon\Carbon::parse($result->created_at)->format('d-m-Y'); !!}
-                                    </td>
+                                        <td> 
+                                            <a href="{{ route('product.edit',$result->id)}}">
+                                                <i class="fa fa-fw fa-pencil-square-o" title="edit"></i> 
+                                            </a>
 
-                                    <td> 
-                                        <a href="{{ route('product.edit',$result->id)}}">
-                                            <i class="fa fa-fw fa-pencil-square-o" title="edit"></i> 
-                                        </a>
+                                            {!! Form::open(array('class' => 'form-inline pull-left deletion-form', 'method' => 'DELETE',  'id'=>'deleteForm_'.$result->id, 'route' => array('product.destroy', $result->id))) !!}
+                                            <button class='delbtn btn btn-danger btn-xs' type="submit" name="remove_levels" value="delete" id="{{$result->id}}"><i class="fa fa-fw fa-trash" title="Delete"></i></button> 
+                                            {!! Form::close() !!} 
+                                        </td>
+                                    </tr>
+                                    @endforeach 
 
-                                        {!! Form::open(array('class' => 'form-inline pull-left deletion-form', 'method' => 'DELETE',  'id'=>'deleteForm_'.$result->id, 'route' => array('product.destroy', $result->id))) !!}
-                                        <button class='delbtn btn btn-danger btn-xs' type="submit" name="remove_levels" value="delete" id="{{$result->id}}"><i class="fa fa-fw fa-trash" title="Delete"></i></button> 
-                                        {!! Form::close() !!} 
-                                    </td>
-                                </tr>
-                                @endforeach 
+                                </tbody>
 
-                            </tbody>
-
-                        </table>
-                        @if($products->count())
-                            <span id="error_msg"></span>
-                            <button class="btn btn-danger" onclick="deleteAll('{{url('admin')}}','products')">Delete All</button>
-                       @endif
-                            <div class="center" align="center">  {!! $products->appends(['search' => isset($_GET['search'])?$_GET['search']:''])->render() !!}</div>
+                            </table>
+                            @if($products->count())
+                                <span id="error_msg"></span>
+                                <button class="btn btn-danger" onclick="deleteAll('{{url('admin')}}','products')">Delete All</button>
+                           @endif
+                                <div class="center" align="center">  {!! $products->appends(['search' => isset($_GET['search'])?$_GET['search']:''])->render() !!}</div>
+                        </div>
                     </div>
+
                 </div>
                 <!-- END EXAMPLE TABLE PORTLET-->
             </div>
