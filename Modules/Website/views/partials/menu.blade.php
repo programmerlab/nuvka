@@ -14,14 +14,14 @@
         </div>
 
 
-          <div class="col-md-6" style="margin-left: 10px; margin-top: 10px; color: #fff; font-size: 25px; font-family: 'Open Sans', sans-serif;"> 
+          <div class="col-md-6" style="margin-left: 10px; margin-top: 10px; color: #fff; font-size: 22px; font-family: 'Open Sans', sans-serif;"> 
                {{$setting->website_title??''}} 
           
         </div>
 
         <div class="col-md-5" style="width: auto;"> 
         <div class="cnt-account">
-          <ul class="list-unstyled">
+          <ul class="list-unstyled"> 
             <li style="color: #fff; ">Call Us: {{$setting->phone??$setting->mobile}} </li>  
             
                 @if($userData==null)
