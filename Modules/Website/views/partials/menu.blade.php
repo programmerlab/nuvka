@@ -9,23 +9,20 @@
        
         
      <div class="offer-text" >
-        <a href="{{url('/')}}">  <img src="{{url('nuvkalogo.png')}}"> </a>
+        <a href="{{url('/')}}">  <img src="{{url('storage/uploads/img/'.$setting->website_logo)}}" style="width: 100px; height: 55px;"> </a>
+
         </div>
 
 
-          <div class="col-md-6" style="margin-left: 10px"> 
-             <form >
-               <input style="margin-top: 6px; height: 40px" class="search-field form-control" name="q" value="{{ $q or ''}}" placeholder="Search here..." />
-               <button style="position:absolute;right: 19px;top: 13px;height: 25px;background: #fff;border: 0px solid;" class="vh79eN" type="submit">
-                <svg    width="20" height="20" viewBox="0 0 17 18" class="" xmlns="http://www.w3.org/2000/svg"><g fill="#2874F1" fill-rule="evenodd"><path class="_2BhAHa" d="m11.618 9.897l4.225 4.212c.092.092.101.232.02.313l-1.465 1.46c-.081.081-.221.072-.314-.02l-4.216-4.203"></path><path class="_2BhAHa" d="m6.486 10.901c-2.42 0-4.381-1.956-4.381-4.368 0-2.413 1.961-4.369 4.381-4.369 2.42 0 4.381 1.956 4.381 4.369 0 2.413-1.961 4.368-4.381 4.368m0-10.835c-3.582 0-6.486 2.895-6.486 6.467 0 3.572 2.904 6.467 6.486 6.467 3.582 0 6.486-2.895 6.486-6.467 0-3.572-2.904-6.467-6.486-6.467"></path></g></svg></button>
-            </form>
+          <div class="col-md-6" style="margin-left: 10px; margin-top: 10px; color: #fff; font-size: 25px; font-family: 'Cinzel', serif !important"> 
+               {{$setting->website_title??''}} 
           
         </div>
 
         <div class="col-md-5" style="width: auto;"> 
         <div class="cnt-account">
           <ul class="list-unstyled">
-            <li style="color: #fff; ">Contact Us:   {{ isset($contact_number->field_value)?$contact_number->field_value:"+91-8210829761" }}</li>  
+            <li style="color: #fff; ">Contact Us: {{$setting->phone??$setting->mobile}} </li>  
             
                 @if($userData==null)
                  <li><a href="{{ url('signup') }}">SignUp</a></li>
@@ -40,9 +37,7 @@
         </div>
         <!-- /.cnt-account -->
         </div>
-
-
-        <div class="clearfix"></div>
+ 
       </div>
       <!-- /.header-top-inner --> 
     </div>

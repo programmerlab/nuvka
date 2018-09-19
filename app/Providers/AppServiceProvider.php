@@ -74,7 +74,7 @@ class AppServiceProvider extends ServiceProvider
             $setting->$key_name = $value->field_value;
         }
 
-        View::share('setting', $setting);
+        View::share('setting', $setting); 
 
 
     }

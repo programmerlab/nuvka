@@ -91,7 +91,8 @@
                                                     
                                                     <td> 
                                                         <a href="{{ route('category.edit',$result->id)}}">
-                                                            <i class="fa fa-edit" title="edit"></i> 
+                                                             <button class='delbtn btn btn-success btn-xs' type="submit" name="remove_levels" value="edit">
+                                                             <i class="fa fa-fw fa-pencil-square-o" title="edit"></i> </i></button> 
                                                         </a>
 
                                                         {!! Form::open(array('class' => 'form-inline pull-left deletion-form', 'method' => 'DELETE',  'id'=>'deleteForm_'.$result->id, 'route' => array('category.destroy', $result->id))) !!}
