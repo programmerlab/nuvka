@@ -3,7 +3,7 @@
     <div id="brands-carousel" class="logo-slider wow fadeInUp">
       <div class="logo-slider-inner">
          
-           <section class="content-section bg-primary text-white">
+           <section class="content-section bg-primary text-white" style="background: #1d809f!important">
       <div class="container text-center">
         <h2 class="mb-4" style="text-decoration:underline;">About Nuvka</h2>
         <div style="text-align: center;font-size:20px; padding: 10px">
@@ -55,13 +55,12 @@
               </li>
               <li class="media">
                 <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-envelope fa-stack-1x fa-inveRSe"></i> </span> </div>
-                <div class="media-body"> <span><a href="#"> {{ isset($website_email->field_value)?$website_email->field_value:"info@shopersquare.com" }}</a></span> </div>
+                <div class="media-body"> <span><a href="#"> {{$setting->website_email??'info@nuvka.in'}}</a></span> </div>
               </li>
                <li class="media">
                 <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-envelope fa-stack-1x fa-inveRSe"></i> </span> </div>
-                <div class="media-body"> <span><a href="http://www.shopersquare.com">
-                  {{ isset($website_url->field_value)?$website_url->field_value:"www.shopersquare.com" }}
-                
+                <div class="media-body"> <span><a href="#">
+                  {{url('/')}}
 
                 </a></span> </div>
               </li>

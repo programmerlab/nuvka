@@ -22,8 +22,7 @@
             <div class="checkout-box faq-page">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="heading-title">Contact Us</h2>
-                    <span class="title-tag">Last Updated on 2017 </span>
+                    <h2 class="heading-title">Contact Us</h2> 
                     <div class="panel-group checkout-steps" id="accordion">
                         <!-- checkout-step-01  -->
             <div class="panel panel-default checkout-step-01">
@@ -91,16 +90,16 @@
     </div>
     <div class="clearfix address">
         <span class="contact-i"><i class="fa fa-map-marker"></i></span>
-         {!! isset($company_address->field_value)?$company_address->field_value:"Indore MP 452001" !!} 
+         {!!  $setting->company_address??'Samstipur' !!}
         <span class="contact-span"  </span>  
     </div>
     <div class="clearfix phone-no">
         <span class="contact-i"><i class="fa fa-mobile"></i></span>
-        <span class="contact-span">  {{ isset($contact_number->field_value)?$contact_number->field_value:"+91-9168518310" }} </span>
+        <span class="contact-span"> {{$setting->phone??$setting->mobile}} </span>
     </div>
     <div class="clearfix email">
         <span class="contact-i"><i class="fa fa-envelope"></i></span>
-        <span class="contact-span"><a href="index.htm#"> {{ isset($website_email->field_value)?$website_email->field_value:"info@guruhomeshops.com" }}</a></span>
+        <span class="contact-span"><a href="index.htm#"> {{$setting->website_email??'info@nuvka.in'}} </a></span>
     </div>
 </div>          </div><!-- /.contact-page -->
         </div>        
