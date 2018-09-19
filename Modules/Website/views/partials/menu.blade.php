@@ -8,13 +8,13 @@
       <div class="header-top-inner">
        
         
-     <div class="logo" >
+     <div class="logo" style="float: left;">
         <a href="{{url('/')}}">  <img src="{{url('storage/uploads/img/'.$setting->website_logo)}}" style="width: 100px; height: 55px;"> </a>
 
         </div>
 
 
-          <div class="col-md-6" style="margin-left: 10px; margin-top: 10px; color: #fff; font-size: 25px; font-family: 'Open Sans', sans-serif; float: left;"> 
+          <div class="col-md-6" style="margin-left: 10px; margin-top: 10px; color: #fff; font-size: 25px; font-family: 'Open Sans', sans-serif;"> 
                {{$setting->website_title??''}} 
           
         </div>
