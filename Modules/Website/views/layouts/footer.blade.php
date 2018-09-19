@@ -6,8 +6,8 @@
            <section class="content-section bg-primary text-white">
       <div class="container text-center">
         <h2 class="mb-4" style="text-decoration:underline;">About Nuvka</h2>
-        <div style="text-align: center;font-size:20px">
-          {{$setting->website_description??$setting->website_title}}
+        <div style="text-align: center;font-size:20px; padding: 10px">
+          {!! $setting->website_description??$setting->website_title !!}
         </div>
       </div>
     </section> 
