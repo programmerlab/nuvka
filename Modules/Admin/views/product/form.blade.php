@@ -85,7 +85,7 @@
 
 
      <div class="form-group{{ $errors->first('photo', ' has-error') }}">
-        <label class="control-label col-md-3">Product Image</label>
+        <label class="control-label col-md-3">Default Product Image</label>
         <div class="col-md-6">  
 
              {!! Form::file('photo',null,['class' => 'form-control form-cascade-control input-small'])  !!}
@@ -103,6 +103,49 @@
             </span>@endif
         </div>
     </div>
+
+
+     <div class="form-group{{ $errors->first('photo1', ' has-error') }}">
+        <label class="control-label col-md-3">Product Image2</label>
+        <div class="col-md-6">  
+
+             {!! Form::file('photo1',null,['class' => 'form-control form-cascade-control input-small'])  !!}
+             <br>
+             @if(!empty($product->photo1))
+                 <img src="{!! Url::to('storage/uploads/products/'.$product->photo1) !!}" width="100px">
+                 <input type="hidden" name="photo1" value="{!! $product->photo1 !!}">
+             @endif                                       
+            <span class="label label-danger">{{ $errors->first('photo1', ':message') }}</span>
+            @if(Session::has('flash_alert_notice')) 
+            <span class="label label-danger">
+
+                {{ Session::get('flash_alert_notice') }} 
+
+            </span>@endif
+        </div>
+    </div>
+
+
+    <div class="form-group{{ $errors->first('photo2', ' has-error') }}">
+        <label class="control-label col-md-3">Product Image3</label>
+        <div class="col-md-6">  
+
+             {!! Form::file('photo2',null,['class' => 'form-control form-cascade-control input-small'])  !!}
+             <br>
+             @if(!empty($product->photo2))
+                 <img src="{!! Url::to('storage/uploads/products/'.$product->photo2) !!}" width="100px">
+                 <input type="hidden" name="photo2" value="{!! $product->photo2 !!}">
+             @endif                                       
+            <span class="label label-danger">{{ $errors->first('photo2', ':message') }}</span>
+            @if(Session::has('flash_alert_notice')) 
+            <span class="label label-danger">
+
+                {{ Session::get('flash_alert_notice') }} 
+
+            </span>@endif
+        </div>
+    </div>
+
 
 
 <div class="form-group hide {{ $errors->first('currency', 'has-error') }}">

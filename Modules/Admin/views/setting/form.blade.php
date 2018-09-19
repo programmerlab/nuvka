@@ -112,6 +112,67 @@
             </div>
         </div> 
 
+         <div class="form-group {{ $errors->first('banner_image1', ' has-error') }}">
+            <label class="control-label col-md-3">Banner image 1  </label>
+            <div class="col-md-6"> 
+                
+                  <div class="row fileupload-buttonbar">
+                     <div class="col-lg-12">
+                       <span class="btn btn-success fileinput-button"> 
+                                            
+                        <input type="file" name="banner_image1" multiple=""> </span>
+                     </div>
+                  </div> 
+             <br>
+              @if(isset($setting->banner_image1))
+              <img src="{!! Url::to('storage/uploads/img/'.$setting->banner_image1) !!}" width="150px">
+              @endif                                   
+            <span class="label label-danger">{{ $errors->first('banner_image1', ':message') }}</span>
+            
+            </div>
+        </div> 
+
+
+         <div class="form-group {{ $errors->first('banner_image2', ' has-error') }}">
+            <label class="control-label col-md-3">Banner image 2  </label>
+            <div class="col-md-6"> 
+                
+                  <div class="row fileupload-buttonbar">
+                     <div class="col-lg-12">
+                       <span class="btn btn-success fileinput-button"> 
+                                            
+                        <input type="file" name="banner_image2" multiple=""> </span>
+                     </div>
+                  </div> 
+             <br>
+              @if(isset($setting->banner_image2))
+              <img src="{!! Url::to('storage/uploads/img/'.$setting->banner_image2) !!}" width="150px">
+              @endif                                   
+            <span class="label label-danger">{{ $errors->first('banner_image2', ':message') }}</span>
+            
+            </div>
+        </div> 
+
+         <div class="form-group {{ $errors->first('banner_image3', ' has-error') }}">
+            <label class="control-label col-md-3">Banner image 3  </label>
+            <div class="col-md-6"> 
+                
+                  <div class="row fileupload-buttonbar">
+                     <div class="col-lg-12">
+                       <span class="btn btn-success fileinput-button"> 
+                                            
+                        <input type="file" name="banner_image3" multiple=""> </span>
+                     </div>
+                  </div> 
+             <br>
+              @if(isset($setting->banner_image3))
+              <img src="{!! Url::to('storage/uploads/img/'.$setting->banner_image3) !!}" width="150px">
+              @endif                                   
+            <span class="label label-danger">{{ $errors->first('banner_image3', ':message') }}</span>
+            
+            </div>
+        </div> 
+
       <div class="form-group{{ $errors->first('company_address', ' has-error') }}">
         <label class="control-label col-md-3">Company Address</label>
         <div class="col-md-6">
