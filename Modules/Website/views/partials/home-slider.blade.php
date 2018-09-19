@@ -4,7 +4,13 @@
            
             <!-- /.item -->
           
-            <div class="item" style="background-image: url({{ asset('public/enduser/assets/images/sliders/02.jpg')}});">
+          @if(file_exists(storage_path('uploads/img/'.$setting->banner_image1)))
+            <div class="item" style="background-image: url({{ asset('storage/uploads/img/'.$setting->banner_image1)}});">
+              @else
+              <div class="item" style="background-image: url({{ asset('public/enduser/assets/images/sliders/02.jpg')}});">
+              
+              @endif
+
               <div class="container-fluid">
                 <div class="caption bg-color vertical-center text-left">
                  
@@ -14,14 +20,24 @@
               <!-- /.container-fluid --> 
             </div>
 
-             <div class="item" style="background-image: url({{ asset('public/enduser/assets/images/sliders/01.jpg') }});">
+               @if(file_exists(storage_path('uploads/img/'.$setting->banner_image2)))
+            <div class="item" style="background-image: url({{ asset('storage/uploads/img/'.$setting->banner_image3)}});">
+              @else
+              <div class="item" style="background-image: url({{ asset('public/enduser/assets/images/sliders/01.jpg')}});">
+              
+              @endif
               <div class="container-fluid">
               
               </div>
               <!-- /.container-fluid --> 
             </div>
             
+             @if(file_exists(storage_path('uploads/img/'.$setting->banner_image3)))
+            <div class="item" style="background-image: url({{ asset('storage/uploads/img/'.$setting->banner_image3)}});">
+              @else
               <div class="item" style="background-image: url({{ asset('public/enduser/assets/images/sliders/03.jpg')}});">
+              
+              @endif
               <div class="container-fluid">
                 <div class="caption bg-color vertical-center text-left">
                  

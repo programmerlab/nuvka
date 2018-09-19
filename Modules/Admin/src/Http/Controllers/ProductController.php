@@ -105,6 +105,26 @@ class ProductController extends Controller
         }
 
 
+        if ($request->file('photo1')) {
+            $photo           = $request->file('photo');
+            $destinationPath = storage_path('uploads/products');
+            $photo->move($destinationPath, time() . $photo->getClientOriginalName());
+            $photo            = time() . $photo->getClientOriginalName();
+            $product->photo1   =   $photo;
+        }
+
+
+        if ($request->file('photo2')) {
+            $photo           = $request->file('photo');
+            $destinationPath = storage_path('uploads/products');
+            $photo->move($destinationPath, time() . $photo->getClientOriginalName());
+            $photo            = time() . $photo->getClientOriginalName();
+            $product->photo2   =   $photo;
+        }
+         
+
+
+
         $table_cname = \Schema::getColumnListing('products');
         $except      = ['id','create_at','updated_at','_token','photo'];
         $input       = $request->all();
@@ -172,17 +192,11 @@ class ProductController extends Controller
     public function update(ProductRequest $request, $id)
     {
           $product = Product::find($id);
-        if ($request->file('photo')) {
-            $photo           = $request->file('photo');
-            $destinationPath = storage_path('uploads/products');
-            $photo->move($destinationPath, time() . $photo->getClientOriginalName());
-            $photo            = time() . $photo->getClientOriginalName();
-            $product->photo   =   $photo;
-        }
+        
 
 
         $table_cname = \Schema::getColumnListing('products');
-        $except      = ['id','create_at','updated_at','_token','photo'];
+        $except      = ['id','create_at','updated_at','_token','photo','photo1','photo2'];
         $input       = $request->all();
 
         $categoryName = Category::find($request->get('product_category'));
@@ -209,7 +223,33 @@ class ProductController extends Controller
             $product->meta_description  = implode(' ', array_slice(explode(' ', $request->get('description')), 0, 80));
         }
 
-        $rs = $product->save();
+        if ($request->file('photo')) {
+            $photo           = $request->file('photo');
+            $destinationPath = storage_path('uploads/products');
+            $photo->move($destinationPath, time() . $photo->getClientOriginalName());
+            $photo            = time() . $photo->getClientOriginalName();
+            $product->photo   =   $photo;
+        }
+
+
+        if ($request->file('photo1')) {
+            $photo           = $request->file('photo1');
+            $destinationPath = storage_path('uploads/products');
+            $photo->move($destinationPath, time() . $photo->getClientOriginalName());
+            $photo            = time() . $photo->getClientOriginalName();
+            $product->photo1   =   $photo;
+        }
+
+
+        if ($request->file('photo2')) {
+            $photo           = $request->file('photo2');
+            $destinationPath = storage_path('uploads/products');
+            $photo->move($destinationPath, time() . $photo->getClientOriginalName());
+            $photo            = time() . $photo->getClientOriginalName();
+            $product->photo2   =   $photo;
+        }
+
+        $product->save();
 
         return Redirect::to(route('product'))
             ->with('flash_alert_notice', 'Product was  successfully updated !');

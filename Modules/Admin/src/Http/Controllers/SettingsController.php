@@ -119,8 +119,8 @@ class SettingsController extends Controller
             $setting->field_value   =   $value;
             $setting->save();
 
-
             if ($request->file($key)) {
+                
                 $photo           = $request->file($key);
                 $destinationPath = storage_path('files/banner/');
                 $photo->move($destinationPath, time() . $photo->getClientOriginalName());
@@ -132,6 +132,7 @@ class SettingsController extends Controller
                 $setting->field_value   =   $banner_image1;
                 $setting->save();
             }
+
         }
 
 

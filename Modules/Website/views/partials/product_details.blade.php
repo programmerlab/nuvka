@@ -1,3 +1,26 @@
+<style>
+.main-product .list-inline>li{width: 10%;    display: inline-block;}
+.main-product .well{width: 50%;}
+.imges li {
+
+	margin: 5px;
+	border: 1px solid #ccc;
+}
+
+.imges li img{
+	height: 70px;
+}
+.tab-pane img {
+	max-height:350px !important;
+	max-width: 300px;
+}
+.tab-content {
+     padding-left: 0px; 
+}
+</style>
+
+
+
 <div class="col-md-9">
     <div class="detail-block">
 
@@ -11,11 +34,43 @@
                         <div class="owl-wrapper-outer">
                             <div style="width: 5742px; left: 0px; display: block;" class="owl-wrapper">
                                 
-                                <div style="width: 319px;" class="owl-item">
-                                    <div class="single-product-gallery-item" id="slide1">
-                                             <img style="width: 100%" src="{{ asset('storage/uploads/products/'. $product->photo) }}" alt="">
-                                    </div>
-                                </div>
+
+
+                                 <div class="main-product">
+								<!-- Tab panes -->
+								<div class="tab-content ">
+								  <div class="tab-pane active" id="tab-1">
+
+								  	<img  src="{{ asset('storage/uploads/products/'. $product->photo) }}" alt="" class="img-responsive img-ht">
+
+								  </div>
+								  <div class="tab-pane" id="tab-2">
+								  	<img  src="{{ asset('storage/uploads/products/'. $product->photo1) }}" alt="" class="img-responsive img-ht">
+								  </div>
+
+								  <div class="tab-pane" id="tab-3">
+								  	<img  src="{{ asset('storage/uploads/products/'. $product->photo2) }}" alt="" class="img-responsive img-ht" width="100%">
+								  </div>
+								  
+								</div>
+								<!-- Nav pills -->
+								<ul class="list-inline imges" style="margin-top: 20px;">
+								  <li class="active" ><a href="#tab-1" data-toggle="tab">
+								  	<img class="img-responsive" alt="" src="{{ asset('storage/uploads/products/'. $product->photo) }}"  ></a></li>
+
+								  	@if(!empty($product->photo1) && file_exists(storage_path('/uploads/products/'. $product->photo1)))
+								  <li><a href="#tab-2" data-toggle="tab">
+								  	<img class="img-responsive" alt="" src="{{ url('storage/uploads/products/'. $product->photo1) }}"  >
+								  </a></li>
+								  @endif
+								  @if( !empty($product->photo2) && file_exists(storage_path('/uploads/products/'. $product->photo2)))
+								  <li><a href="#tab-3" data-toggle="tab">
+								  	<img class="img-responsive" alt="" src="{{ asset('storage/uploads/products/'. $product->photo2) }}">
+								  </a></li>
+								  @endif
+								</ul>
+						    </div>
+
 
                             </div>
                         </div> 
