@@ -98,8 +98,7 @@
             <ul class='list-unstyled'>
               <li class="fiRSt"><a title="Your Account" href="##">About us</a></li>
               <li><a title="Information" href="{{ url('contact') }}">Customer Service</a></li>
-              <li><a title="Addresses" href="{{ url('contact') }}">Company</a></li>
-              <li><a title="Addresses" href="{{ url('contact') }}">Investor Relations</a></li> 
+              <li><a title="Addresses" href="{{ url('contact') }}">Company</a></li> 
             </ul>
           </div>
           <!-- /.module-body --> 
@@ -115,8 +114,7 @@
           <div class="module-body">
             <ul class='list-unstyled'>
               <li><a href="##" title="Blog">Blog</a></li>
-              <li><a href="##" title="Company">Company</a></li>
-              <li><a href="{{ url('contact') }}" title="Investor Relations">Investor Relations</a></li>
+              <li><a href="##" title="Company">Company</a></li> 
               <li class=" last"><a href="{{ url('contact') }}" title="SupplieRS">Contact Us</a></li>
             </ul>
           </div>
@@ -131,11 +129,7 @@
         <ul class="link">
           <li class="fb pull-left"><a target="_blank" rel="nofollow" href="##" title="Facebook"></a></li>
           <li class="tw pull-left"><a target="_blank" rel="nofollow" href="##" title="Twitter"></a></li>
-          <li class="googleplus pull-left"><a target="_blank" rel="nofollow" href="##" title="GooglePlus"></a></li>
-          <li class="RSs pull-left"><a target="_blank" rel="nofollow" href="##" title="RSS"></a></li>
-          <li class="pintrest pull-left"><a target="_blank" rel="nofollow" href="##" title="PInterest"></a></li>
-          <li class="linkedin pull-left"><a target="_blank" rel="nofollow" href="##" title="Linkedin"></a></li>
-          <li class="youtube pull-left"><a target="_blank" rel="nofollow" href="##" title="Youtube"></a></li>
+          <li class="googleplus pull-left"><a target="_blank" rel="nofollow" href="##" title="GooglePlus"></a></li> 
         </ul>
       </div>
       <div class="col-xs-12 col-sm-6 no-padding">
