@@ -22,7 +22,7 @@
         <div class="col-md-5" style="width: auto;"> 
         <div class="cnt-account">
           <ul class="list-unstyled">
-            <li style="color: #fff; ">Contact Us: {{$setting->phone??$setting->mobile}} </li>  
+            <li style="color: #fff; ">Call Us: {{$setting->phone??$setting->mobile}} </li>  
             
                 @if($userData==null)
                  <li><a href="{{ url('signup') }}">SignUp</a></li>
