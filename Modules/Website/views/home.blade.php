@@ -26,4 +26,5 @@
             @include('website::partials.home-right-product-panel')
 
         </div>
+ 
     @stop

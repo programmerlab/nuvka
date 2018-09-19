@@ -2,37 +2,15 @@
     <!-- ============================================== BRANDS CAROUSEL ============================================== -->
     <div id="brands-carousel" class="logo-slider wow fadeInUp">
       <div class="logo-slider-inner">
-        <div id="brand-slider" class="owl-carousel brand-slider custom-carousel owl-theme">
-          <div class="item m-t-15"> <a href="##" class="image"> <img data-echo="{{ asset('public/enduser/assets/images/brands/brand1.png') }}" src="{{ asset('public/enduser/assets/images/blank.gif') }}" alt=""> </a> </div>
-          <!--/.item-->
-          
-          <div class="item m-t-10"> <a href="##" class="image"> <img data-echo="{{ asset('public/enduser/assets/images/brands/brand2.png') }}" src="{{ asset('public/enduser/assets/images/blank.gif') }}" alt=""> </a> </div>
-          <!--/.item-->
-          
-          <div class="item"> <a href="##" class="image"> <img data-echo="{{ asset('public/enduser/assets/images/brands/brand3.png') }}" src="{{ asset('public/enduser/assets/images/blank.gif') }}" alt=""> </a> </div>
-          <!--/.item-->
-          
-          <div class="item"> <a href="##" class="image"> <img data-echo="{{ asset('public/enduser/assets/images/brands/brand4.png') }}" src="{{ asset('public/enduser/assets/images/blank.gif') }}" alt=""> </a> </div>
-          <!--/.item-->
-          
-          <div class="item"> <a href="##" class="image"> <img data-echo="{{ asset('public/enduser/assets/images/brands/brand5.png') }}" src="{{ asset('public/enduser/assets/images/blank.gif') }}" alt=""> </a> </div>
-          <!--/.item-->
-          
-          <div class="item"> <a href="##" class="image"> <img data-echo="{{ asset('public/enduser/assets/images/brands/brand6.png') }}" src="{{ asset('public/enduser/assets/images/blank.gif') }}" alt=""> </a> </div>
-          <!--/.item-->
-          
-          <div class="item"> <a href="##" class="image"> <img data-echo="{{ asset('public/enduser/assets/images/brands/brand2.png') }}" src="{{ asset('public/enduser/assets/images/blank.gif') }}" alt=""> </a> </div>
-          <!--/.item-->
-          
-          <div class="item"> <a href="##" class="image"> <img data-echo="{{ asset('public/enduser/assets/images/brands/brand4.png') }}" src="{{ asset('public/enduser/assets/images/blank.gif') }}" alt=""> </a> </div>
-          <!--/.item-->
-          
-          <div class="item"> <a href="##" class="image"> <img data-echo="{{ asset('public/enduser/assets/images/brands/brand1.png') }}" src="{{ asset('public/enduser/assets/images/blank.gif') }}" alt=""> </a> </div>
-          <!--/.item-->
-          
-          <div class="item"> <a href="##" class="image"> <img data-echo="{{ asset('public/enduser/assets/images/brands/brand5.png') }}" src="{{ asset('public/enduser/assets/images/blank.gif') }}" alt=""> </a> </div>
-          <!--/.item--> 
+         
+           <section class="content-section bg-primary text-white">
+      <div class="container text-center">
+        <h2 class="mb-4" style="text-decoration:underline;">About Nuvka</h2>
+        <div style="text-align: center;font-size:20px">
+          {{$setting->website_description??$setting->website_title}}
         </div>
+      </div>
+    </section> 
         <!-- /.owl-carousel #logo-slider --> 
       </div>
       <!-- /.logo-slider-inner --> 
@@ -62,7 +40,7 @@
                 <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-map-marker fa-stack-1x fa-inveRSe"></i> </span> </div>
                 <div class="media-body">
                   <p>  
-                  {!! isset($company_address->field_value)?$company_address->field_value:"Indore MP 452001" !!}
+                  {!!  $setting->company_address??'Samstipur' !!}
                   </p>
                 </div>
               </li>
@@ -70,7 +48,7 @@
                 <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-mobile fa-stack-1x fa-inveRSe"></i> </span> </div>
                 <div class="media-body">
                   <p> 
-                  {{ isset($contact_number->field_value)?$contact_number->field_value:"+91-7067777832" }} 
+                  {{$setting->phone??$setting->mobile}}
 
                     </p> 
                 </div>
