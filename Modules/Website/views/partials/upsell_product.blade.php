@@ -1,4 +1,4 @@
-<section class="section featured-product wow fadeInUp">
+<section class="section featured-product wow fadeInUp hidden-xs">
      <h3 class="section-title">upsell products</h3>
      <div class="owl-carousel home-owl-carousel upsell-product custom-carousel owl-theme outer-top-xs">
           

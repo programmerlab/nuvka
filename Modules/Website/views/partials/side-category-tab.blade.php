@@ -1,6 +1,6 @@
       
    <!-- ================================== TOP NAVIGATION ================================== -->
-        <div class="side-menu animate-dropdown">
+        <div class="side-menu animate-dropdown hidden-xs">
           <div class="head"><i class="icon fa fa-baRS"></i> Categories  </div>
           <nav class="yamm megamenu-horizontal">
             <ul class="nav"> 
