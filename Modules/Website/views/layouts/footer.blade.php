@@ -39,30 +39,15 @@
               <li class="media">
                 <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-map-marker fa-stack-1x fa-inveRSe"></i> </span> </div>
                 <div class="media-body">
-                  <p>  
                   {!!  $setting->company_address??'Samstipur' !!}
-                  </p>
                 </div>
               </li>
               <li class="media">
                 <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-mobile fa-stack-1x fa-inveRSe"></i> </span> </div>
                 <div class="media-body">
-                  <p> 
                   {{$setting->phone??$setting->mobile}}
 
-                    </p> 
                 </div>
-              </li>
-              <li class="media">
-                <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-envelope fa-stack-1x fa-inveRSe"></i> </span> </div>
-                <div class="media-body"> <span><a href="#"> {{$setting->website_email??'info@nuvka.in'}}</a></span> </div>
-              </li>
-               <li class="media">
-                <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-envelope fa-stack-1x fa-inveRSe"></i> </span> </div>
-                <div class="media-body"> <span><a href="#">
-                  {{url('/')}}
-
-                </a></span> </div>
               </li>
             </ul>
           </div>
@@ -81,7 +66,7 @@
               <li class="fiRSt"><a href="{{ url('myaccount') }}" title="Contact us">My Account</a></li>
               <li><a href="{{ url('myaccount') }}" title="About us">Order History</a></li>
               <li><a href="{{url('faq')}}" title="faq">FAQ</a></li> 
-              <li class="last"><a href="{{ url('contact') }}" title="Where is my order?">Help Center</a></li>
+             
             </ul>
           </div>
           <!-- /.module-body --> 
@@ -127,9 +112,8 @@
     <div class="container">
       <div class="col-xs-12 col-sm-6 no-padding social">
         <ul class="link">
-          <li class="fb pull-left"><a target="_blank" rel="nofollow" href="##" title="Facebook"></a></li>
-          <li class="tw pull-left"><a target="_blank" rel="nofollow" href="##" title="Twitter"></a></li>
-          <li class="googleplus pull-left"><a target="_blank" rel="nofollow" href="##" title="GooglePlus"></a></li> 
+          <li class="fb pull-left"><a target="_blank" rel="nofollow" href="{{$setting->fb_id}}" title="Facebook"></a></li>
+          <li class="tw pull-left"><a target="_blank" rel="nofollow" href="{{$setting->twitter_id}}" title="Twitter"></a></li> 
         </ul>
       </div>
       <div class="col-xs-12 col-sm-6 no-padding">
@@ -138,8 +122,7 @@
             <li><img src="{{ asset('public/enduser/assets/images/payments/1.png') }}" alt=""></li>
             <li><img src="{{ asset('public/enduser/assets/images/payments/2.png') }}" alt=""></li>
             <li><img src="{{ asset('public/enduser/assets/images/payments/3.png') }}" alt=""></li>
-            <li><img src="{{ asset('public/enduser/assets/images/payments/4.png') }}" alt=""></li>
-            <li><img src="{{ asset('public/enduser/assets/images/payments/5.png') }}" alt=""></li>
+            <li><img src="{{ asset('public/enduser/assets/images/payments/4.png') }}" alt=""></li> 
           </ul>
         </div>
         <!-- /.payment-methods --> 
