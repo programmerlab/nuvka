@@ -2,7 +2,7 @@
    <div class="container">
     <div class="breadcrumb-inner">
       <ul class="list-inline list-unstyled">
-        <li><a href="#">Home</a></li> 
+        <li><a href="{{url('/')}}">Home</a></li> 
 
         @if(isset($category_name) && !isset($product->category->name))
         <li>{!! $category_name !!}</li>

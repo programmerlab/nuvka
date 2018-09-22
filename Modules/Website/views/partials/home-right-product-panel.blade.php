@@ -27,8 +27,103 @@
     <!-- /.wide-banneRS --> 
     
     <!-- ============================================== WIDE PRODUCTS : END ============================================== --> 
+
+      <section class="section wow fadeInUp new-arriavls">
+      <h3 class="section-title">Product Category</h3>
+        <div class="home-owl-carousel custom-carousel outer-top-xs">
+
+             @foreach($all_categories as $key => $product) 
+                <div class="item">
+                  <div class="products">
+                    <div class="product">
+                      <div class="product-image">
+                        <div class="image"> <a href="{{  $product->url }}">
+                          <img  style="max-height: 200px !important"  src="{{ asset('storage/uploads/category/'. $product->category_group_image) }}" alt=""></a> 
+                        </div>
+                        <!-- /.image --> 
+                        <div class="tag hot"><span>new</span></div>
+                      </div>
+                      <!-- /.product-image -->
+                      
+                      <div class="product-info text-left">
+                        <h3 class="name">
+                          <a href="{{  $product->url }}">
+                            <div class="product-price"> 
+                              <span class="price"> {{$product->name}}  </span> <span class="price--before-discount"></span> 
+                            </div>
+                          </a>
+                        </h3>
+                        <div class="rating rateit-small"></div>
+                         <!-- /.product-price --> 
+                        
+                      </div>
+                      <!-- /.product-info -->
+                      <div class="cart clearfix animate-effect">
+                        <div class="action">
+                          <ul class="list-unstyled">
+                             
+                            <li class="lnk wishlist"> <a class="add-to-cart" href="{{  $product->url }}" title="Show product details"> <i class="fa fa-shopping-cart"></i>  View Details </a> </li>
+                            
+                          </ul>
+                        </div>
+                        <!-- /.action --> 
+                      </div>
+                      <!-- /.cart --> 
+                    </div>
+                    <!-- /.product --> 
+                    
+                  </div>
+                  <!-- /.products --> 
+                </div>
+              
+            @endforeach  
+        <!-- /.item -->
+         
+
+        <!-- /.item --> 
+      </div>
+      <!-- /.home-owl-carousel --> 
+    </section>
     <!-- ============================================== SCROLL TABS ============================================== -->
-    <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
+   
+    <!-- /.scroll-tabs --> 
+    <!-- ============================================== SCROLL TABS : END ============================================== --> 
+
+    <!-- ============================================== FEATURED PRODUCTS ============================================== -->
+    <div class="wide-banners wow fadeInUp outer-bottom-xs animated" style="visibility: visible; animation-name: fadeInUp;">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="wide-banner cnt-strip">
+                <div class="image"> <img class="img-responsive" src="{{ asset('public/enduser/assets/images/banners/home-banner.jpg') }}" alt="" width="100%;"> </div>
+                           <div class="new-label">
+                  <div class="text">NEW</div>
+                </div>
+                <!-- /.new-label --> 
+              </div>
+              <!-- /.wide-banner --> 
+            </div>
+            <!-- /.col --> 
+            
+          </div>
+          <!-- /.row --> 
+        </div>
+ 
+
+
+
+    <!-- /.section --> 
+    <!-- ============================================== FEATURED PRODUCTS : END ============================================== --> 
+    <!-- ============================================== WIDE PRODUCTS ============================================== -->
+   
+    <!-- /.wide-banneRS --> 
+     
+    <!-- ============================================== BLOG SLIDER ============================================== -->
+ 
+    <!-- /.section --> 
+    <!-- ============================================== BLOG SLIDER : END ============================================== --> 
+    
+    <!-- ============================================== FEATURED PRODUCTS ============================================== -->
+      <div id="product-tabs-slider" class="scroll-tabs outer-top-vs wow fadeInUp">
       <div class="more-info-tab clearfix ">
         <h3 class="new-product-title pull-left">New Products</h3>
 
@@ -55,7 +150,7 @@
                     <div class="product">
                       <div class="product-image">
                         <div class="image"> <a href="{{ url($product->url )}}">
-                          <img  src="{{ url('storage/uploads/products/'. $product->photo) }}" alt=""></a> 
+                          <img   style="max-height: 200px !important"  src="{{ url('storage/uploads/products/'. $product->photo) }}" alt=""></a> 
                         </div>
                         <!-- /.image --> 
                         <div class="tag hot"><span>new</span></div>
@@ -121,7 +216,7 @@
                     <div class="product">
                       <div class="product-image">
                         <div class="image"> <a href="{{  $product->url }}">
-                          <img  src="{{ asset('storage/uploads/products/'. $product->photo) }}" alt=""></a> 
+                          <img  style="max-height: 200px !important"   src="{{ asset('storage/uploads/products/'. $product->photo) }}" alt=""></a> 
                         </div>
                         <!-- /.image --> 
                         <div class="tag hot"><span>new</span></div>
@@ -174,99 +269,6 @@
       </div>
       <!-- /.tab-content --> 
     </div>
-    <!-- /.scroll-tabs --> 
-    <!-- ============================================== SCROLL TABS : END ============================================== --> 
-
-    <!-- ============================================== FEATURED PRODUCTS ============================================== -->
-    <div class="wide-banners wow fadeInUp outer-bottom-xs animated" style="visibility: visible; animation-name: fadeInUp;">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="wide-banner cnt-strip">
-                <div class="image"> <img class="img-responsive" src="{{ asset('public/enduser/assets/images/banners/home-banner.jpg') }}" alt="" width="100%;"> </div>
-                           <div class="new-label">
-                  <div class="text">NEW</div>
-                </div>
-                <!-- /.new-label --> 
-              </div>
-              <!-- /.wide-banner --> 
-            </div>
-            <!-- /.col --> 
-            
-          </div>
-          <!-- /.row --> 
-        </div>
- 
-
-
-
-    <!-- /.section --> 
-    <!-- ============================================== FEATURED PRODUCTS : END ============================================== --> 
-    <!-- ============================================== WIDE PRODUCTS ============================================== -->
-   
-    <!-- /.wide-banneRS --> 
-     
-    <!-- ============================================== BLOG SLIDER ============================================== -->
- 
-    <!-- /.section --> 
-    <!-- ============================================== BLOG SLIDER : END ============================================== --> 
-    
-    <!-- ============================================== FEATURED PRODUCTS ============================================== -->
-    <section class="section wow fadeInUp new-arriavls">
-      <h3 class="section-title">New Arrivals</h3>
-      <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
-
-           @foreach($categories as $key => $value)  
-            @foreach($product_new as $key2 => $product) 
-              
-               
-                 <div class="item item-carousel">
-                  <div class="products">
-                    <div class="product">
-                      <div class="product-image">
-                        <div class="image"> <a href="{{  $product->url }}">
-                          <img  src="{{ asset('storage/uploads/products/'. $product->photo) }}" alt=""></a> 
-                        </div>
-                        <!-- /.image --> 
-                        <div class="tag hot"><span>new</span></div>
-                      </div>
-                      <!-- /.product-image -->
-                      
-                      <div class="product-info text-left">
-                        <h3 class="name"><a href="{{  $product->url }}">{{$product->product_title}}</a></h3>
-                        <div class="rating rateit-small"></div>
-                        <div class="description">({{ $product->views+100 }} views)</div>
-                       <div class="product-price"> <span class="price"> RS {{$product->price-($product->price*$product->discount)/100}} </span> <span class="price-before-discount">RS {{$product->price}}</span> </div>
-                        <!-- /.product-price --> 
-                        
-                      </div>
-                      <!-- /.product-info -->
-                      <div class="cart clearfix animate-effect">
-                        <div class="action">
-                          <ul class="list-unstyled">
-                             
-                            <li class="lnk wishlist"> <a class="add-to-cart" href="{{  $product->url }}" title="Show product details"> <i class="fa fa-shopping-cart"></i>  View Details </a> </li>
-                            
-                          </ul>
-                        </div>
-                        <!-- /.action --> 
-                      </div>
-                      <!-- /.cart --> 
-                    </div>
-                    <!-- /.product --> 
-                    
-                  </div>
-                  <!-- /.products --> 
-                </div>
-              
-            @endforeach 
-          @endforeach
-        <!-- /.item -->
-         
-
-        <!-- /.item --> 
-      </div>
-      <!-- /.home-owl-carousel --> 
-    </section>
     <!-- /.section --> 
     <!-- ============================================== FEATURED PRODUCTS : END ============================================== --> 
     
