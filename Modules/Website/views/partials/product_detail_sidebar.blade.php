@@ -1,4 +1,4 @@
-<div class="col-md-3 sidebar">
+<div class="col-md-3 sidebar hidden-xs">
 	<div class="sidebar-module-container">
 			 
     <div class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">

@@ -1,4 +1,4 @@
- <div class="col-md-3 sidebar"> 
+ <div class="col-md-3 sidebar "> 
     <!-- ================================== TOP NAVIGATION ================================== -->
      @include('website::partials.side-category-tab')
     <!-- /.side-menu --> 
