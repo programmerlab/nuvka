@@ -1,5 +1,5 @@
  <!--  SIDEBAR  -->
-  <div class="col-xs-12 col-sm-12 col-md-3 sidebar">  
+  <div class="col-xs-12 col-sm-12 col-md-3 sidebar hidden-xs">  
     
     <!-- ============================================== HOT DEALS ============================================== -->
  <div class="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">

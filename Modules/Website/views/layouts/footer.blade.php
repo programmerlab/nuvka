@@ -161,7 +161,11 @@
 
     <!-- JavaScripts placed at the end of the document so the pages load faster --> 
     <script src="{{ asset('public/enduser/assets/js/jquery-1.11.1.min.js') }}"></script> 
+     <script src="{{ asset('public/enduser/assets/js/bootstrap.min.js') }}"></script> 
+     <script src="{{ asset('public/enduser/assets/js/owl.carousel.min.js') }}"></script> 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    
+    
     <script type="text/javascript">
       
       $(window).load(function() {
@@ -170,9 +174,8 @@
       });
     </script>
 
-    <script src="{{ asset('public/enduser/assets/js/bootstrap.min.js') }}"></script> 
+   
     <script src="{{ asset('public/enduser/assets/js/bootstrap-hover-dropdown.min.js') }}"></script> 
-    <script src="{{ asset('public/enduser/assets/js/owl.carousel.min.js') }}"></script> 
     <script src="{{ asset('public/enduser/assets/js/echo.min.js') }}"></script> 
     <script src="{{ asset('public/enduser/assets/js/jquery.easing-1.3.min.js') }}"></script> 
     <script src="{{ asset('public/enduser/assets/js/bootstrap-slider.min.js') }}"></script> 

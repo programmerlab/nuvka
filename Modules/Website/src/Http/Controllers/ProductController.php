@@ -112,10 +112,12 @@ class ProductController extends Controller {
         $product_new    = Product::with('category')->orderBy('id','desc')->groupBy('product_category')->Paginate(12); 
         $categories     = Category::nested()->get();  
 
+        $all_categories     = Category::all();  
+ 
         $banner = Settings::whereIn('field_key',['banner_image1','banner_image3','banner_image3'])->get();
  
 
-        return view('website::home', compact('special_deals','hot_products','banner_path1', 'banner_path2','categories','products','product_new','banner')); 
+        return view('website::home', compact('special_deals','hot_products','banner_path1', 'banner_path2','categories','products','product_new','banner','all_categories')); 
     }
 
     /*
