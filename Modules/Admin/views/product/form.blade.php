@@ -58,6 +58,16 @@
         </div>
     </div>  
 
+    <div class="form-group {{ $errors->first('unit', ' has-error') }}">
+        <label class="control-label col-md-3">Unit Description <span class="required"> * </span></label>
+        <div class="col-md-6"> 
+            {!! Form::text('unit',null, ['class' => 'form-control','data-required'=>1,'placeholder'=>'per kg, per litre'])  !!} 
+
+            <span class="help-block">{{ $errors->first('unit', ':message') }}</span>
+        </div>
+    </div>  
+
+
 <div class="form-group  {{ $errors->first('discount', 'has-error') }}">
     <label class="control-label col-md-3">Discount  </label>
     <div class="col-md-6"> 

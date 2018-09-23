@@ -248,7 +248,6 @@ class ProductController extends Controller
             $photo            = time() . $photo->getClientOriginalName();
             $product->photo2   =   $photo;
         }
-
         $product->save();
 
         return Redirect::to(route('product'))
