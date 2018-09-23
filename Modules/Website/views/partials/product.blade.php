@@ -32,7 +32,8 @@
 
                           <img  style="float: left;height: 200px;border: 1px solid #ccc;" src="{{ asset('storage/uploads/products/'. $product->photo) }}" alt="{{ $product->product_title }}"> 
 
-                          </a> </div>
+                          </a> 
+                        </div>
                           <!-- /.image -->
                           
                           <div class="tag new"><span>new</span></div>
@@ -81,7 +82,7 @@
                @foreach($products as $key => $product) 
               <div style="visibility: visible; animation-name: fadeInUp;" class="category-product-inner wow fadeInUp animated">
                   <div class="products">
-                    <div class="product-list product">
+                    <div class="product-list product" style="box-shadow: 0 2px 4px 0 rgba(0,0,0,.08)">
                       <div class="row product-list-row">
                         <div class="col col-sm-4 col-lg-4">
                           <div class="product-image">
@@ -94,31 +95,33 @@
                           <!-- /.product-image --> 
                         </div>
                         <!-- /.col -->
-                        <div class="col col-sm-8 col-lg-8">
+                        <div class="col col-sm-8 col-lg-8" style="float: left;">
                           <div class="product-info">
                             <h3 class="name"><a href="{!! url($product->url) !!}">{{$product->product_title}}</a></h3>
                             <br>
                             
                             <div class="product-price"> 
                               <span class="price"> 
-                              RS {{ $product->price-($product->price*$product->discount)/100}} </span> 
+                              RS {{ $product->price-($product->price*$product->discount)/100}} {{ucwords($product->unit)}}</span>
+
                             <span class="price-before-discount">
-                              RS {{$product->price}}</span> 
+                              RS {{$product->price}} </span> 
+                             
                             </div>
                             <!-- /.product-price -->
                             <div class="description m-t-10">{!! str_limit($product->description,100) !!}
 
-                            <a href="{!! url($product->url) !!}"> More</a>   </div>
+                            <a href="{!! url($product->url) !!}"> Read More</a>   </div>
                             <div class="cart clearfix animate-effect">
-                              <div class="action" col-md-12> 
+                              <div class="action col-md-12" > 
                                   
-                                <div class="col-sm-7" > 
+                                <div class="col-sm-4" style="margin-bottom: 10px;"> 
                                   <a href="{{ url($product->slug.'/addToCart/'.$product->id) }}" id="addToCart" class="btn btn-primary"> <i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART</a>
                               </div> 
-                            <div class="col-sm-4">
-                                <a href="{{ url($product->slug.'/buyNow/'.$product->id) }}" class="btn btn-success">
-                                <i class="fa fa-shopping-cart inner-right-vs"></i> BUY </a>
-                            </div>
+                              <div class="col-sm-3">
+                                  <a href="{{ url($product->slug.'/buyNow/'.$product->id) }}" class="btn btn-success">
+                                  <i class="fa fa-shopping-cart inner-right-vs"></i> BUY </a>
+                              </div>
                                    
                               </div>
                               <!-- /.action --> 

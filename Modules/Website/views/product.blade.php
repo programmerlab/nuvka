@@ -27,7 +27,7 @@
                                     <img src="{{asset('images/shop/product9.jpg')}}" alt="" />
                                     <h2>${{$product->price}}</h2>
                                     <p>{{$product->name}}</p>
-                                    <a href="{{url('cart')}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    <a href="{{url('cart')}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart2</a>
                                     <a href='{{url("products/details/$product->id")}}' class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                 </div>
                                 <div class="product-overlay">
