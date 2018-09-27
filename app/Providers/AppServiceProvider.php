@@ -9,6 +9,7 @@ use Route;
 use View;
 use Modules\Admin\Models\Category;
 use Modules\Admin\Models\Settings;
+use Modules\Website\Models\Page;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -73,6 +74,11 @@ class AppServiceProvider extends ServiceProvider
             $key_name           = $value->field_key;
             $setting->$key_name = $value->field_value;
         }
+
+        $page_menu = Page::all();
+
+        View::share('page_menu', $page_menu); 
+
 
         View::share('setting', $setting); 
 

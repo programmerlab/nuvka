@@ -27,6 +27,7 @@ use Input;
 use App\Helpers\Helper as Helper;
 use Modules\Website\Models\Settings; 
 use Modules\Website\Models\ShippingBillingAddress;
+use Modules\Website\Models\Page;
 
 
 class HomeController extends Controller
@@ -359,6 +360,17 @@ class HomeController extends Controller
        // $request->session()->keep(['current_user']); 
 
         return view('website::thanku',compact('categories','products','category','cart','billing','shipping'));
+
+    }
+
+
+    public function page(Request $request, $name=null){
+    
+      $page = Page::where('slug',$name)->first();
+      $page_title= ucfirst(($page->title)??$name);
+      $html = ($page->page_content)??'<h1>Record not found</h1>';
+
+      return view('website::page',compact('page','page_title','html'));
 
     }
 }

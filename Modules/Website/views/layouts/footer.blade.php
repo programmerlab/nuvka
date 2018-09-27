@@ -63,9 +63,14 @@
           
           <div class="module-body">
             <ul class='list-unstyled'>
-              <li class="fiRSt"><a href="{{ url('myaccount') }}" title="Contact us">My Account</a></li>
-              <li><a href="{{ url('myaccount') }}" title="About us">Order History</a></li>
-              <li><a href="{{url('faq')}}" title="faq">FAQ</a></li> 
+             @foreach($page_menu as  $key => $result)
+
+                @if($key<3)
+                <li class="fiRSt">
+                  <a title="Your Account" href="{{url('page/'.$result->slug)}}"> {{ ucfirst($result->title)}} </a>
+                </li>
+                @endif
+              @endforeach
              
             </ul>
           </div>
@@ -75,15 +80,22 @@
         
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="module-heading">
-            <h4 class="module-title">Corporation</h4>
+            <h4 class="module-title">  <p style="height: 10px;"></p></h4>
           </div>
           <!-- /.module-heading -->
           
           <div class="module-body">
             <ul class='list-unstyled'>
-              <li class="fiRSt"><a title="Your Account" href="##">About us</a></li>
-              <li><a title="Information" href="{{ url('contact') }}">Customer Service</a></li>
-              <li><a title="Addresses" href="{{ url('contact') }}">Company</a></li> 
+
+              @foreach($page_menu as  $key => $result)
+
+                @if($key<6 && $key<3)
+                <li class="fiRSt">
+                  <a title="Your Account" href="{{url('page/'.$result->slug)}}"> {{ ucfirst($result->title)}} </a>
+                </li>
+                @endif
+              @endforeach
+             
             </ul>
           </div>
           <!-- /.module-body --> 
@@ -92,15 +104,20 @@
         
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="module-heading">
-            <h4 class="module-title">Why Choose Us</h4>
+            <h4 class="module-title"> <p style="height: 10px;"></p></h4>
           </div>
           <!-- /.module-heading -->
           
           <div class="module-body">
             <ul class='list-unstyled'>
-              <li><a href="##" title="Blog">Blog</a></li>
-              <li><a href="##" title="Company">Company</a></li> 
-              <li class=" last"><a href="{{ url('contact') }}" title="SupplieRS">Contact Us</a></li>
+              @foreach($page_menu as  $key => $result)
+
+                @if($key>5)
+                <li class="fiRSt">
+                  <a title="Your Account" href="{{url('page/'.$result->slug)}}"> {{ ucfirst($result->title)}} </a>
+                </li>
+                @endif
+              @endforeach
             </ul>
           </div>
           <!-- /.module-body --> 

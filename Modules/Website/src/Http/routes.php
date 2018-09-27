@@ -25,6 +25,10 @@
                   'uses'  => 'ProductController@showProduct' 
                 ]); 
 
+        Route::get('page/{name}',[
+                  'as' => 'pageContent',
+                  'uses'  => 'HomeController@page' 
+                ]); 
 
 
         Route::match(['post','get'],'cat','HomeController@index');

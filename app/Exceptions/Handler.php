@@ -54,6 +54,11 @@ class Handler extends ExceptionHandler
         {
             return \Redirect::to('/');
         }
+
+        if($exception instanceof Exception ){
+            return Redirect::to('page/page-not-found');
+        }
+
         return parent::render($request, $exception);
     }
 }
