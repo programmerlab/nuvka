@@ -41,7 +41,6 @@
                                                 <th>Product Title</th>
                                                 <th>Price</th> 
                                                 <th>Payment Mode</th>
-                                                <th>Vendor</th>
                                                  <th>Order Date</th>
                                                  <th>Status</th>
                                                <!--  <th>Action</th> -->
@@ -70,9 +69,7 @@
                                                 <td>{{ isset($result->product->product_title)?$result->product->product_title:'' }} </td>
                                                  <td>{{ $result->total_price }} </td>
                                                    <td>{{ $result->payment_mode }} </td> 
-                                               <td>
-                                                {{ isset($result->product->id)? $helper->getVendorName($result->product->id):'' }}
-                                               </td>
+                                              
                                                 <td>
                                                     {!! Carbon\Carbon::parse($result->created_at)->format('d-M-Y'); !!}
                                                 </td>
