@@ -136,22 +136,7 @@ class PageController extends Controller
             ->with('flash_alert_notice2', 'Page was successfully created !');
     }
 
-
-    public function meta($obj)
-    {
-        $content = Meta::where('page_id', $obj->id)->first();
-
-        if (!$content) {
-            return $obj;
-        }
-        $obj->meta_title       = $content->meta_title;
-        $obj->meta_key         = $content->meta_key;
-        $obj->meta_description = $content->meta_description;
-        $obj->url              = $content->url;
-        $obj->slug             = $content->slug;
-
-        return $obj;
-    }
+ 
     /*
      * Edit Group method
      * @param
@@ -163,8 +148,7 @@ class PageController extends Controller
         $page        = Pages::find($id);
         $page_title  = 'page';
         $page_action = 'Show page';
-        $page        = $this->meta($page);
-
+        
         return view('packages::pages.edit', compact('page', 'banner', 'page_title', 'page_action'));
     }
 
