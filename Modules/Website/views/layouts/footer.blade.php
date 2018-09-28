@@ -89,7 +89,7 @@
 
               @foreach($page_menu as  $key => $result)
 
-                @if($key<6 && $key<3)
+                @if($key>2 && $key<6)
                 <li class="fiRSt">
                   <a title="Your Account" href="{{url('page/'.$result->slug)}}"> {{ ucfirst($result->title)}} </a>
                 </li>
