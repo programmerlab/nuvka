@@ -91,7 +91,7 @@
 
                 @if($key>3)
                 <li class="fiRSt">
-                  <a style="color: #fff" title="Your Account" href="{{url('page/'.$result->slug)}}"> {{ ucfirst($result->title)}} </a>
+                  <a style="color: #fff" title="{{$result->slug}}" href="{{url('page/'.$result->slug)}}"> {{ ucfirst($result->title)}} </a>
                 </li>
                 @endif
               @endforeach
