@@ -23,7 +23,7 @@
         </div> 
 
          <div class="form-group{{ $errors->first('page_content', ' has-error') }}">
-        <label class="control-label col-md-3">Page Content</label>
+        <label class="control-label col-md-3">Page Description</label>
         <div class="col-md-8"> 
             {!! Form::textarea('page_content',null, ['class' => 'form-control ckeditor form-cascade-control input-small'])  !!}
             <span class="label label-danger">{{ $errors->first('page_content', ':message') }}</span>

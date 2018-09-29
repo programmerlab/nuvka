@@ -154,8 +154,8 @@ class PageController extends Controller
 
     public function update(PageRequest $request, $id = null)
     {
-        $page = Pages::firstOrNew(['slug' => $request->get('slug'),'id' => $id]);
-        //$page = Pages::find($id);
+        
+         $page = Pages::find($id);
         if ($request->file('images')) {
             $photo           = $request->file('images');
             $destinationPath = storage_path('pages/');
