@@ -93,8 +93,7 @@ class PageController extends Controller
 
     public function store(PageRequest $request, Pages $page)
     {
-        $page = Pages::firstOrNew(['slug' => $request->get('slug')]);
-
+         
         if ($request->file('images')) {
             $photo           = $request->file('images');
             $destinationPath = storage_path('pages/');
@@ -152,11 +151,11 @@ class PageController extends Controller
         return view('packages::pages.edit', compact('page', 'banner', 'page_title', 'page_action'));
     }
 
-    public function update(PageRequest $request, $id = null)
+    public function update(Request $request, $id = null)
     {
         
          $page = Pages::find($id);
-        if ($request->file('images')) {
+         if ($request->file('images')) {
             $photo           = $request->file('images');
             $destinationPath = storage_path('pages/');
             $photo->move($destinationPath, time() . $photo->getClientOriginalName());

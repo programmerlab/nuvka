@@ -65,7 +65,37 @@
             </div>
         </div>
 
-        <div class="form-group {{ $errors->first('meta_title', ' has-error') }}">
+       <div class="form-group{{ $errors->first('company_timing', ' has-error') }}">
+        <label class="control-label col-md-3">Company Timing</label>
+        <div class="col-md-6">
+            {!! Form::textarea('company_timing',null, ['class' => 'form-control ckeditor' ,'data-provide'=>"markdown"])  !!}
+            <span class="label label-danger">{{ $errors->first('company_timing', ':message') }}</span>
+            
+        </div>
+      </div>
+
+      <div class="form-group{{ $errors->first('company_address', ' has-error') }}">
+        <label class="control-label col-md-3">Company Address</label>
+        <div class="col-md-6">
+            {!! Form::textarea('company_address',null, ['class' => 'form-control ckeditor' ,'data-provide'=>"markdown"])  !!}
+            <span class="label label-danger">{{ $errors->first('company_address', ':message') }}</span>
+            
+        </div>
+      </div>
+ 
+
+      <div class="form-group{{ $errors->first('website_description', ' has-error') }}">
+        <label class="control-label col-md-3">Website Description</label>
+        <div class="col-md-6"> 
+          
+            {!! Form::textarea('website_description',null, ['class' => 'form-control ckeditor' ,'data-provide'=>"markdown"])  !!}
+            <span class="label label-danger">{{ $errors->first('website_description', ':message') }}</span>
+             
+             
+        </div>
+      </div> 
+        
+         <div class="form-group {{ $errors->first('meta_title', ' has-error') }}">
             <label class="control-label col-md-3">Meta Title <span class="required"> * </span></label>
             <div class="col-md-6"> 
                 {!! Form::text('meta_title',null, ['class' => 'form-control','data-required'=>1])  !!} 
@@ -86,11 +116,13 @@
         <div class="form-group {{ $errors->first('meta_description', ' has-error') }}">
             <label class="control-label col-md-3">Meta Description  </label>
             <div class="col-md-6"> 
-                {!! Form::text('meta_description',null, ['class' => 'form-control','data-required'=>1])  !!} 
+                {!! Form::text('meta_description',null, ['class' => 'form-control ckeditor','data-required'=>1])  !!} 
                 
                 <span class="help-block">{{ $errors->first('meta_description', ':message') }}</span>
             </div>
         </div> 
+
+
 
          <div class="form-group {{ $errors->first('website_logo', ' has-error') }}">
             <label class="control-label col-md-3">Website Logo  </label>
@@ -172,34 +204,11 @@
             
             </div>
         </div> 
-
-      <div class="form-group{{ $errors->first('company_address', ' has-error') }}">
-        <label class="control-label col-md-3">Company Address</label>
-        <div class="col-md-6">
-            {!! Form::textarea('company_address',null, ['class' => 'form-control' ,'data-provide'=>"markdown"])  !!}
-            <span class="label label-danger">{{ $errors->first('company_address', ':message') }}</span>
-            
-        </div>
-      </div>
- 
-
-      <div class="form-group{{ $errors->first('website_description', ' has-error') }}">
-        <label class="control-label col-md-3">Website Description</label>
-        <div class="col-md-6"> 
-          
-            {!! Form::textarea('website_description',null, ['class' => 'form-control' ,'data-provide'=>"markdown"])  !!}
-            <span class="label label-danger">{{ $errors->first('website_description', ':message') }}</span>
-             
-             
-        </div>
-      </div> 
-        
-        
         <div class="form-group{{ $errors->first('google_analytics_code', ' has-error') }}">
         <label class="control-label col-md-3">Google analytics code</label>
         <div class="col-md-6"> 
           
-            {!! Form::textarea('google_analytics_code',null, ['class' => 'form-control' ,'data-provide'=>"markdown"])  !!}
+            {!! Form::textarea('google_analytics_code',null, ['class' => 'form-control ckeditor' ,'data-provide'=>"markdown"])  !!}
             <span class="label label-danger">{{ $errors->first('google_analytics_code', ':message') }}</span>
              
              
@@ -234,6 +243,36 @@
                 {!! Form::text('twitter_url',isset($setting->twitter_url)?$setting->twitter_url:'https://twitter.com/1marketresearc1', ['class' => 'form-control'])  !!} 
                 
                 <span class="help-block">{{ $errors->first('twitter_url', ':message') }}</span>
+            </div>
+        </div>
+
+        <div class="form-group {{ $errors->first('twitter_url', 'has-error') }}">
+            <label class="control-label col-md-3">Google Plus </label>
+            <div class="col-md-6"> 
+                {!! Form::text('twitter_url',isset($setting->google_plus)?$setting->google_plus:'https://plus.google.com', ['class' => 'form-control'])  !!} 
+                
+                <span class="help-block">{{ $errors->first('google_plus', ':message') }}</span>
+            </div>
+        </div>
+
+
+         <div class="form-group {{ $errors->first('pintrest', 'has-error') }}">
+            <label class="control-label col-md-3">Pintrest </label>
+            <div class="col-md-6"> 
+                {!! Form::text('twitter_url',isset($setting->pintrest)?$setting->pintrest:'https://in.pinterest.com/', ['class' => 'form-control'])  !!} 
+                
+                <span class="help-block">{{ $errors->first('pintrest', ':message') }}</span>
+            </div>
+        </div>
+
+        
+
+        <div class="form-group {{ $errors->first('youtube', 'has-error') }}">
+            <label class="control-label col-md-3">Youtube </label>
+            <div class="col-md-6"> 
+                {!! Form::text('youtube',isset($setting->youtube)?$setting->youtube:'https://youtube.com/', ['class' => 'form-control'])  !!} 
+                
+                <span class="help-block">{{ $errors->first('youtube', ':message') }}</span>
             </div>
         </div>
 

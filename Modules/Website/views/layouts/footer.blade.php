@@ -38,13 +38,13 @@
             <ul class="toggle-footer" style="">
               <li class="media">
                 <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-map-marker fa-stack-1x fa-inveRSe"></i> </span> </div>
-                <div class="media-body">
+                <div class="media-body" style="color: #fff">
                   {!!  $setting->company_address??'Samstipur' !!}
                 </div>
               </li>
               <li class="media">
                 <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-mobile fa-stack-1x fa-inveRSe"></i> </span> </div>
-                <div class="media-body">
+                <div class="media-body" style="color: #fff">
                   {{$setting->phone??$setting->mobile}}
 
                 </div>
@@ -65,9 +65,9 @@
             <ul class='list-unstyled'>
              @foreach($page_menu as  $key => $result)
 
-                @if($key<3)
+                @if($key<4)
                 <li class="fiRSt">
-                  <a title="Your Account" href="{{url('page/'.$result->slug)}}"> {{ ucfirst($result->title)}} </a>
+                  <a title="Your Account" style="color: #fff" href="{{url('page/'.$result->slug)}}"> {{ ucfirst($result->title)}} </a>
                 </li>
                 @endif
               @endforeach
@@ -89,9 +89,9 @@
 
               @foreach($page_menu as  $key => $result)
 
-                @if($key>2 && $key<6)
+                @if($key>3)
                 <li class="fiRSt">
-                  <a title="Your Account" href="{{url('page/'.$result->slug)}}"> {{ ucfirst($result->title)}} </a>
+                  <a style="color: #fff" title="Your Account" href="{{url('page/'.$result->slug)}}"> {{ ucfirst($result->title)}} </a>
                 </li>
                 @endif
               @endforeach
@@ -104,20 +104,17 @@
         
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="module-heading">
-            <h4 class="module-title"> <p style="height: 10px;"></p></h4>
+            <h4 class="module-title">Working Hours</h4>
           </div>
           <!-- /.module-heading -->
           
           <div class="module-body">
-            <ul class='list-unstyled'>
-              @foreach($page_menu as  $key => $result)
-
-                @if($key>5)
-                <li class="fiRSt">
-                  <a title="Your Account" href="{{url('page/'.$result->slug)}}"> {{ ucfirst($result->title)}} </a>
-                </li>
-                @endif
-              @endforeach
+            <ul class='list-unstyled' style="color: #fff">
+               
+                
+                {!! $setting->company_timing??'' !!}  
+                
+               
             </ul>
           </div>
           <!-- /.module-body --> 
@@ -129,8 +126,17 @@
     <div class="container">
       <div class="col-xs-12 col-sm-6 no-padding social">
         <ul class="link">
-          <li class="fb pull-left"><a target="_blank" rel="nofollow" href="{{$setting->fb_id}}" title="Facebook"></a></li>
-          <li class="tw pull-left"><a target="_blank" rel="nofollow" href="{{$setting->twitter_id}}" title="Twitter"></a></li> 
+
+          <ul class="link">
+          <li class="fb pull-left"><a target="_blank" rel="nofollow" href="{{$setting->fb_id??'#'}}" title="Facebook"></a></li>
+          <li class="tw pull-left"><a target="_blank" rel="nofollow" href="{{$setting->twitter_id??'#'}}" title="Twitter"></a></li>
+          <li class="googleplus pull-left"><a target="_blank" rel="nofollow" href="{{$setting->google_plus??'#'}}" title="GooglePlus"></a></li>
+        
+          <li class="pintrest pull-left"><a target="_blank" rel="nofollow" href="{{$setting->pintrest??'#'}}" title="PInterest"></a></li>
+          <li class="linkedin pull-left"><a target="_blank" rel="nofollow" href="{{$setting->linkedin_url??'#'}}" title="Linkedin"></a></li>
+          <li class="youtube pull-left"><a target="_blank" rel="nofollow" href="{{$setting->youtube??'#'}}" title="Youtube"></a></li>
+
+
         </ul>
       </div>
       <div class="col-xs-12 col-sm-6 no-padding">
