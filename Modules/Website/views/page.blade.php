@@ -33,6 +33,11 @@
                             <div class="panel-body">
                                {!! $html??'' !!}        
                             </div>
+                            @if(!empty($page->images))
+                            <div class="panel-body">
+                               <img src="{{url('storage/pages/'.$page->images)}}">        
+                            </div>
+                            @endif
                             <!-- panel-body  -->
 
                         </div><!-- row -->
