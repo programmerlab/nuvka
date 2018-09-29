@@ -91,7 +91,7 @@ class PageController extends Controller
      * Save method
      * */
 
-    public function store(PageRequest $request, Pages $page)
+    public function store(Request $request, Pages $page)
     {
          
         if ($request->file('images')) {
