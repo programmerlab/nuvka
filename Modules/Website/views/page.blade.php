@@ -35,7 +35,7 @@
                             </div>
                             @if(!empty($page->images))
                             <div class="panel-body">
-                               <img src="{{url('storage/pages/'.$page->images)}}">        
+                               <img src="{{url('storage/pages/'.$page->images)}}" width="100%">        
                             </div>
                             @endif
                             <!-- panel-body  -->
